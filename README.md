@@ -174,9 +174,9 @@ classDiagram
 	style User fill:#cdcdcd,stroke-width:0px
 ```
 
-### Step 4 | Object Relations Mapping (ORM)
+### Step 4 | Model Layer 
 
-Create all models inner `model` package.
+Create all models inner `model` package (_Object Relations Mapping (ORM)_).
 
 Add configuration in `properties.yml` for access to H2 memory DB.
 
@@ -210,6 +210,13 @@ spring:
         web-allow-others: false
 ```
 
+### Step 5 | Business Layer
+
+in this step, to create the Service where to apply business rules.
+The best practice says:
+
+1. create a Service interface for my Entity
+2. implement these Service interfaces in my class
 
 <!-- links -->
 [link-initializr]:https://start.spring.io/
