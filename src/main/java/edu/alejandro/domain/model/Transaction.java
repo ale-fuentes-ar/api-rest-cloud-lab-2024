@@ -1,4 +1,4 @@
-package edu.alejandro.model;
+package edu.alejandro.domain.model;
 
 import jakarta.persistence.*;
 
