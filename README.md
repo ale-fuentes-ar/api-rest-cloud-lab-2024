@@ -149,7 +149,7 @@ classDiagram
 		-float amountIn 
 		-float amountOut 
 	}
-	class Expense {  
+	class ExpenseStatistics {  
 		-int percent 
 		-String description 
 	}
@@ -163,18 +163,52 @@ classDiagram
 		-float amount
 	}
 
-	User --> Account
-	User --> Card
-	User --> Transaction
-	User --> WeekActivity
-	User --> Expense
-	User --> QuickTransfer 
-	User --> BalanceHistory 
+	User "1" --* "1" Account : Composition
+	User "1" --* "0..n" Card : Composition
+	User "1" --* "0..n" Transaction : Composition
+	User "1" --* "0..n" WeekActivity : Composition
+	User "1" --* "0..n" ExpenseStatistics : Composition
+	User "1" --* "0..n" QuickTransfer : Composition
+	User "1" --* "0..n" BalanceHistory : Composition
+	
+	style User fill:#cdcdcd,stroke-width:0px
 ```
 
 ### Step 4 | Object Relations Mapping (ORM)
 
+Create all models inner `model` package.
 
+Add configuration in `properties.yml` for access to H2 memory DB.
+
+```yaml
+application:
+  title: API Rest Cloud - LAB
+  version: v1.0
+  author: Alejandro Fuentes - alefuentes.edu
+spring:
+  application:
+    name: api-rest-cloud-lab-2024
+  # Database
+  datasource:
+    url: jdbc:h2:mem:apirestlab2024
+    username: alefu
+    password: 
+  jpa:
+    show-sql: true
+    open-in-view: false
+    hibernate:
+      ddl-auto: create # validate | update | create | create-drop
+    properties:
+      hibernate:
+        format_sql: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        trace: false
+        web-allow-others: false
+```
 
 
 <!-- links -->
