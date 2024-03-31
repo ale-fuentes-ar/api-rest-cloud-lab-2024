@@ -5,11 +5,11 @@
 > 
 > thecnologies that to use
 > 
-> <img src="https://img.shields.io/badge/Java-232F3E?style=for-the-badge&logo=openjdk&logoColor=white" />
-> <img src="https://img.shields.io/badge/Amazon_AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" />
-> <img src="https://img.shields.io/badge/Spring-232F3E?style=for-the-badge&logo=Spring&logoColor=white" />
-> <img src="https://img.shields.io/badge/PostgreSQL-232F3E?style=for-the-badge&logo=PostgreSQL&logoColor=white" />
-> <img src="https://img.shields.io/badge/H2_DB_Memory-232F3E?style=for-the-badge&logoColor=white" />
+> <img src="https://img.shields.io/badge/Java-232F3E?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java language"/>
+> <img src="https://img.shields.io/badge/Amazon_AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="Amazon AWS"/>
+> <img src="https://img.shields.io/badge/Spring-232F3E?style=for-the-badge&logo=Spring&logoColor=white" alt="Spring framework"/>
+> <img src="https://img.shields.io/badge/PostgreSQL-232F3E?style=for-the-badge&logo=PostgreSQL&logoColor=white" alt="Postgresql database"/>
+> <img src="https://img.shields.io/badge/H2_DB_Memory-232F3E?style=for-the-badge&logoColor=white" alt="H2 database"/>
 
 ## Steps
 
