@@ -278,6 +278,33 @@ These variables like `${PGHOST}` are created as 'environment var' in the IDE use
 
 > ✒️ OBS. the first execution the `ddl-auto` need set how `create`, because need create our tables, after first run, change configuration to `validate` for the data has persistence in the next restart system.
 
+#### 1º modification : Prepare `build.gradle`
+
+In this file, add section `tasks.jar`:
+
+```gradle
+tasks.jar {
+  manifest {
+    attributes["Main-Class"] = "edu.alejandro.ApiRestCloudLab2024Application"
+  }
+}
+
+tasks.named('test') {
+  useJUnitPlatform()
+}
+```
+
+#### 2º modification : Create file `Procfile`
+
+1. Create the file `Procfile` in root project
+2. Build project `gradle->Tasks->build->bootJar`
+3. after execute `buildJar` a one folder was crate in project `build/libs` copy this path and use how part of the configuration
+
+Content `Procfile`:
+```procfile
+web: java -jar build/libs/api-rest-cloud-lab-2024-0.0.1-SNAPSHOT.jar
+```
+
 <!-- links -->
 [link-initializr]:https://start.spring.io/
 [link-figmaabstration]:https://www.figma.com/file/cimP7PYnrMeFyOkbLaX9TI/My-Prototype-Bank?type=design&node-id=1-5&mode=design
