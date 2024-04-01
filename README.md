@@ -245,6 +245,9 @@ After runned our project, test in browser the next link:
 [http://localhost:8080/swagger-ui/index.html][link-swagger-localhost]
 
 
+### Step 7 | Handler Exceptions
+
+To centralize exceptions, I use the `controller.exception` package, which is used to create all exception handlers related to the RESTful API section.
 
 
 
