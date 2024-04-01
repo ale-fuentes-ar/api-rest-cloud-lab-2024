@@ -11,7 +11,7 @@
 > <img src="https://img.shields.io/badge/PostgreSQL-232F3E?style=for-the-badge&logo=PostgreSQL&logoColor=white" alt="Postgresql database"/>
 > <img src="https://img.shields.io/badge/H2_DB_Memory-232F3E?style=for-the-badge&logoColor=white" alt="H2 database"/>
 
-## Steps
+## Steps DEV
 
 ### Step 1 | create spring project
 
@@ -216,7 +216,7 @@ spring:
         web-allow-others: false
 ```
 
-> OBS. we can see our H2 database using this link `http://localhost:8080/h2-console/`.
+> ✒️ OBS. we can see our H2 database using this link `http://localhost:8080/h2-console/`.
 > 
 > For connect see `properties.yml` file configuration, the section `h2`
 > 
@@ -249,7 +249,34 @@ After runned our project, test in browser the next link:
 
 To centralize exceptions, I use the `controller.exception` package, which is used to create all exception handlers related to the RESTful API section.
 
+## Steps PRD
 
+Now, gonna to prepare project for up to cloud, for this test, I use the [Railway][link-railway]. This cloud platform is easy to use, only associate a our github account and get 5u$ per month to use. 
+
+#### Prepare `properties-prd.yaml` file
+
+Now, we gonna create a configuration os project for run in PRD (our PRD is the cloud)
+
+```yaml
+application:
+  title: API Rest Cloud - LAB - PRD
+  version: v1.0
+  author: Alejandro Fuentes - alefuentes.edu
+
+spring:
+  datasource:
+    url: jdbc:postgresql://${PGHOST}:${PGPORT}/${PGDATABASE}
+    username: ${PGUSER}
+    password: ${PGPASSWORD}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate #create
+```
+
+These variables like `${PGHOST}` are created as 'environment var' in the IDE used, the names of these variables are the same that `Railway` shows us after creating a `Postgresql` resource.
+
+> ✒️ OBS. the first execution the `ddl-auto` need set how `create`, because need create our tables, after first run, change configuration to `validate` for the data has persistence in the next restart system.
 
 <!-- links -->
 [link-initializr]:https://start.spring.io/
@@ -257,3 +284,4 @@ To centralize exceptions, I use the `controller.exception` package, which is use
 [link-jsoneditoronline]:https://jsoneditoronline.org/
 [link-springdoc-openapi]:https://github.com/springdoc/springdoc-openapi
 [link-swagger-localhost]:http://localhost:8080/swagger-ui/index.html
+[link-railway]:https://railway.app/
