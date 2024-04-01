@@ -1,0 +1,14 @@
+application:
+  title: API Rest Cloud - LAB - PRD
+  version: v1.0
+  author: Alejandro Fuentes - alefuentes.edu
+
+spring:
+  datasource:
+    url: jdbc:postgresql://${PGHOST}:${PGPORT}/${PGDATABASE}
+    username: ${PGUSER}
+    password: ${PGPASSWORD}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate #create

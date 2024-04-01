@@ -1,7 +1,9 @@
 application:
-  title: API Rest Cloud - LAB
+  title: API Rest Cloud - LAB - DEV
   version: v1.0
   author: Alejandro Fuentes - alefuentes.edu
+server:
+  port: 8085
 spring:
   application:
     name: api-rest-cloud-lab-2024
