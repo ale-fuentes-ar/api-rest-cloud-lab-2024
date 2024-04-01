@@ -49,57 +49,63 @@ git push
 
 In this [figma graph][link-figmaabstration] is where I did abstraction.
 
-I use [Json editor online][link-jsoneditoronline] how tools for create abstraction.
+I use [Json editor online][link-jsoneditoronline] how tools for create abstraction. Next if my result to abstraction in JSON format:
 
 ```json
 {
-  "icon": "myPhoto",
-  "name": "alefuentes",
+  "name": "alefuuu",
   "account": {
-    "number": "000000000-0",
-    "agency": "0000",
+    "picture": "myphoto.jpg",
+    "number": "1230032100-10",
+    "agency": "0001",
     "balance": 1234.12,
-    "limit": 10000.00
+    "accountLimit": 10000.00
   },
   "cards": [
     {
-      "number": "xxxx xxxx xxxx 0000",
-      "name": "ale fuentes",
+      "number": "xxxx xxxx xxxx 0010",
+      "name": "ale fuuuu",
       "valid": "12/24",
-      "limit": 10000.00
+      "cardLimit": 5000.00
+    },
+    {
+      "number": "xxxx xxxx xxxx 0021",
+      "name": "ale fuuuu 21",
+      "valid": "08/25",
+      "cardLimit": 7500.00
     }
   ],
   "transactions": [
     {
-      "icon": "",
+      "icon": "Nubank.jpg",
       "description": "Deposit from my",
       "amount": 150.00,
-      "data": "28/03/2024"
+      "date": "28/03/2024"
     }
   ],
-  "weekAtivity": [
+  "weekActivities": [
     {
-      "day": "sunday",
+      "activityDay": "Sunday",
       "amountIn": 150.00,
       "amountOut": 75.00
     }
   ],
-  "expense": [
+  "expenseStatistics": [
     {
-      "percent": 20,
+      "percent": 20.00,
       "description": "Investment"
     }
   ],
-  "quickTransfer": [
+  "quickTransfers": [
     {
       "icon": "",
       "name": "Daniel Fuentes",
       "title": "Designer"
     }
   ],
-  "balanceHistory": [
+  "balanceHistories": [
     {
-      "month": "March",
+      "monthBalance": "March",
       "amount": 575.00
     }
   ]
@@ -210,15 +216,41 @@ spring:
         web-allow-others: false
 ```
 
+> OBS. we can see our H2 database using this link `http://localhost:8080/h2-console/`.
+> 
+> For connect see `properties.yml` file configuration, the section `h2`
+> 
+
 ### Step 5 | Business Layer
 
-in this step, to create the Service where to apply business rules.
+In this step, to create the Service where to apply business rules.
 The best practice says:
 
 1. create a Service interface for my Entity
 2. implement these Service interfaces in my class
 
+### Step 6 | RESTful layer
+
+Next, is time to create endpoints for clients can consume our service.
+Now, for testing, we can incorporate in our project one tool called `swagger`, it is easy and friendly to use.
+
+#### Swegger
+
+See [OpenApi Swegger][link-springdoc-openapi] about how to use `Swegger`
+
+```text
+implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0'
+```
+After runned our project, test in browser the next link:
+[http://localhost:8080/swagger-ui/index.html][link-swagger-localhost]
+
+
+
+
+
 <!-- links -->
 [link-initializr]:https://start.spring.io/
 [link-figmaabstration]:https://www.figma.com/file/cimP7PYnrMeFyOkbLaX9TI/My-Prototype-Bank?type=design&node-id=1-5&mode=design
 [link-jsoneditoronline]:https://jsoneditoronline.org/
+[link-springdoc-openapi]:https://github.com/springdoc/springdoc-openapi
+[link-swagger-localhost]:http://localhost:8080/swagger-ui/index.html
