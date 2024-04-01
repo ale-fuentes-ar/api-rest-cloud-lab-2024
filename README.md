@@ -3,41 +3,39 @@
 
 > This project is for DIO platform study.
 > 
-> thecnologies that to use
-> 
 > <img src="https://img.shields.io/badge/Java-232F3E?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java language"/>
 > <img src="https://img.shields.io/badge/Cloud_Railway-232F3E?style=for-the-badge&logoColor=white" alt="Amazon AWS"/>
 > <img src="https://img.shields.io/badge/Spring-232F3E?style=for-the-badge&logo=Spring&logoColor=white" alt="Spring framework"/>
 > <img src="https://img.shields.io/badge/PostgreSQL-232F3E?style=for-the-badge&logo=PostgreSQL&logoColor=white" alt="Postgresql database"/>
 > <img src="https://img.shields.io/badge/H2_DB_Memory-232F3E?style=for-the-badge&logoColor=white" alt="H2 database"/>
 
-> Technologies
+> 🧰 **Technologies**
 > 
-> JAVA <br>
-> H2 - Data Base (_DEV environment_) <br>
-> Postgres - Data Base (_PRD environment_) <br>
-> Spring Boot 3 <br>
-> Spring Data JPA <br>
-> OpenAPI (Swagger) <br>
-> Cloud RailWay <br>
+> * JAVA <br>
+> * H2 - Data Base (_DEV environment_) <br>
+> * Postgres - Data Base (_PRD environment_) <br>
+> * Spring Boot 3 <br>
+> * Spring Data JPA <br>
+> * OpenAPI (Swagger) <br>
+> * Cloud RailWay <br>
 
 ## Steps DEV
 
 ### Step 1 | create spring project
 
-We can use the [Spring Initializr][link-initializr] for create our project.
-This site is a good platform where we can create the structure our project quickly and easily.
+We can use the [Spring Initializr][link-initializr] to create our project.
+This site is a good platform where we can create the structure of our project quickly and easily.
 
-#### tools that was use in this project
+#### tools that were used in this project
 
 * Spring Web
 * Spring Data JPA (_Java Persistence API_)
 * H2 Database (_in-memory database that support JDBC API and R2DBC access_)
 * PostgreSQL Driver
 
-### Step 2 | versioning in one repository
+### Step 2 | Versioning in one repository
 
-We can use some repository platform such GitLab, GitHub, and so on.
+We can use some repository platforms such GitLab, GitHub, and so on.
 
 #### steps for it
 **in the platform (remote repository)**
@@ -48,7 +46,7 @@ We can use some repository platform such GitLab, GitHub, and so on.
 3. create a work folder
 4. start `git init`
 5. link with our remote repository `git remote add <url-of-our-remote-repository>`
-6. after add or change some file, to do synchronize 
+6. after adding or changing some files, to do synchronize 
 
 ```bash
 git commit -m"some message"
@@ -286,11 +284,11 @@ spring:
 
 These variables like `${PGHOST}` are created as 'environment var' in the IDE used, the names of these variables are the same that `Railway` shows us after creating a `Postgresql` resource.
 
-> ✒️ OBS. the first execution the `ddl-auto` need set how `create`, because need create our tables, after first run, change configuration to `validate` for the data has persistence in the next restart system.
+> ✒️ OBS. In the first execution the `ddl-auto` needs to set how `create`, because need to create our tables, after the first run, change the configuration to `validate` for the data to have persistence in the next restart system.
 
 #### 1º modification : Prepare `build.gradle`
 
-In this file, add section `tasks.jar`:
+In this file, add the section `tasks.jar`:
 
 ```gradle
 tasks.jar {
@@ -308,7 +306,7 @@ tasks.named('test') {
 
 1. Create the file `Procfile` in root project
 2. Build project `gradle->Tasks->build->bootJar`
-3. after execute `buildJar` a one folder was crate in project `build/libs` copy this path and use how part of the configuration
+3. after executing `buildJar` one folder was a crate in the project `build/libs` copy this path and use how part of the configuration
 
 Content `Procfile`:
 ```procfile
