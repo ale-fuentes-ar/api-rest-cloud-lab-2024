@@ -15,4 +15,27 @@ public class BalanceHistory {
     @Column(precision = 13, scale = 2)
     private BigDecimal amount;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getMonthBalance() {
+        return monthBalance;
+    }
+
+    public void setMonthBalance(String monthBalance) {
+        this.monthBalance = monthBalance;
+    }
+
+    public BigDecimal getAmount() {
+        return amount;
+    }
+
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
+    }
 }
