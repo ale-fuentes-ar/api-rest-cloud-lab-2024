@@ -19,9 +19,24 @@
 > * OpenAPI (_Swagger_) <br>
 > * RailWay (_Cloud_) <br>
 
+**DEV Environment Sections**
+* [Step 1 | Create spring project](#step-1--create-spring-project)
+* [Step 2 | Versioing in one repository](#step-2--versioning-in-one-repository)
+* [Step 3 | Abstraction for UX design](#step-3--abstraction-from-ux-design)
+* [Step 4 | Entities on Model Layer](#step-4--entities-on-model-layer)
+* [Step 5 | Business on Services Layer](#step-5--business-on-service-layer)
+* [Step 6 | RESTful on Controller Layer](#step-6--restful-on-controller-layer)
+* [Step 7 | Handler Exceptions](#step-7--handler-exceptions)
+
+**PRD Environment Sections**
+
+* [Prepare `properties-prd.yml` file](#prepare-properties-prdyml-file)
+* [1º modification : Prepare `build.gradle`](#1º-modification--prepare-buildgradle)
+* [2º modification : Create file `Procfile`](#2º-modification--create-file-procfile)
+
 ## Steps DEV
 
-### Step 1 | create spring project
+### Step 1 | Create spring project
 
 We can use the [Spring Initializr][link-initializr] to create our project.
 This site is a good platform where we can create the structure of our project quickly and easily.
@@ -53,7 +68,7 @@ git commit -m"some message"
 git push
 ```
 
-### Step 3 | Abstraction 
+### Step 3 | Abstraction from UX design
 
 In this [figma graph][link-figmaabstration] is where I did abstraction.
 
@@ -188,7 +203,7 @@ classDiagram
 	style User fill:#cdcdcd,stroke-width:0px
 ```
 
-### Step 4 | Model Layer 
+### Step 4 | Entities on Model Layer
 
 Create all models inner `model` package (_Object Relations Mapping (ORM)_).
 
@@ -229,7 +244,7 @@ spring:
 > For connect see `properties.yml` file configuration, the section `h2`
 > 
 
-### Step 5 | Business Layer
+### Step 5 | Business on Service Layer
 
 In this step, to create the Service where to apply business rules.
 The best practice says:
@@ -237,7 +252,7 @@ The best practice says:
 1. create a Service interface for my Entity
 2. implement these Service interfaces in my class
 
-### Step 6 | RESTful layer
+### Step 6 | RESTful on Controller Layer
 
 Next, is time to create endpoints for clients can consume our service.
 Now, for testing, we can incorporate in our project one tool called `swagger`, it is easy and friendly to use.
@@ -252,7 +267,6 @@ implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0'
 After runned our project, test in browser the next link:
 [http://localhost:8080/swagger-ui/index.html][link-swagger-localhost]
 
-
 ### Step 7 | Handler Exceptions
 
 To centralize exceptions, I use the `controller.exception` package, which is used to create all exception handlers related to the RESTful API section.
@@ -261,7 +275,7 @@ To centralize exceptions, I use the `controller.exception` package, which is use
 
 Now, gonna to prepare project for up to cloud, for this test, I use the [Railway][link-railway]. This cloud platform is easy to use, only associate a our github account and get 5u$ per month to use. 
 
-#### Prepare `properties-prd.yaml` file
+#### Prepare `properties-prd.yml` file
 
 Now, we gonna create a configuration os project for run in PRD (our PRD is the cloud)
 
