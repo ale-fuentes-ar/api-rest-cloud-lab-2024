@@ -275,6 +275,8 @@ To centralize exceptions, I use the `controller.exception` package, which is use
 
 Now, gonna to prepare project for up to cloud, for this test, I use the [Railway][link-railway]. This cloud platform is easy to use, only associate a our github account and get 5u$ per month to use. 
 
+### On Code
+
 #### Prepare `properties-prd.yml` file
 
 Now, we gonna create a configuration os project for run in PRD (our PRD is the cloud)
@@ -327,6 +329,29 @@ Content `Procfile`:
 web: java -jar build/libs/api-rest-cloud-lab-2024-0.0.1-SNAPSHOT.jar
 ```
 
+### On Railway
+
+#### Setting on environment
+
+In shared varables:
+
+```raw
+SPRING_PROFILES_ACTIVE -> prd
+```
+
+#### Setting on API
+
+```raw
+PORT=8080
+PGDATABASE=r<name-database>
+PGHOST=<host-database>
+PGPASSWORD=<password-dabatase>
+PGPORT=<port-database>
+PGUSER=<user-database>
+
+```
+
+#### 
 <!-- links -->
 [link-initializr]:https://start.spring.io/
 [link-figmaabstration]:https://www.figma.com/file/cimP7PYnrMeFyOkbLaX9TI/My-Prototype-Bank?type=design&node-id=1-5&mode=design
